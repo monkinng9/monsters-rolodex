@@ -1,6 +1,5 @@
 import { Component } from 'react';
 
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -8,28 +7,21 @@ class App extends Component {
     super();
 
     this.state = {
-      name: {firstName: 'Chayut', lastName: 'Tumon'},
-      company: 'ZTM',
+      monters: [
+        {name: 'Chayut',},
+        {name: 'Tim',},
+        {name: 'Gut',},
+        {name: 'Marcin',},
+      ]
     }
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>Hello {this.state.name.firstName} {this.state.name.lastName}, I work at {this.state.company}</p>
-          <button onClick={() => {
-              this.setState(
-                () => {
-                  return {
-                    name: {firstName: 'Andrei', lastName: 'Neaogie'}
-                  };
-                }
-              );
-            }
-          }>Change Name</button>
-        </header>
+        {this.state.monters.map((monster) => {
+          return <h1>{monster.name}</h1>;
+        })}
       </div>
     );
   }
