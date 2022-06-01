@@ -28,12 +28,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.monters.map((monster) => {
-          return (
-            <div key={monster.id}>
-              <h1>{monster.name}</h1>
-            </div>
-          )
+      <input 
+        className='search-box' 
+        type='search' placeholder='Search monster' 
+        onChange={(event) => {
+          
+      }}/>
+      {this.state.monters.map((monster) => {
+        return (
+          <div key={monster.id}>
+            <h1>{monster.name}</h1>
+          </div>
+        );
         })}
       </div>
     );
