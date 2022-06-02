@@ -4,6 +4,7 @@ import CardList from './components/card-list/card-list.component'
 import SearchBox from './components/search-box/search-box.component'
 import './App.css';
 
+
 class App extends Component {
   constructor() {
     super();
@@ -34,9 +35,6 @@ class App extends Component {
   }
 
   render() {
-
-    console.log('render App')
-
     const { monsters, searchField } = this.state;
     const { onSearchChange } = this;
 
@@ -47,11 +45,13 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1 className="app-title">Robot Rock!</h1>
         <SearchBox 
           className="search-box"
           onChangeHandlers={onSearchChange} 
           placeholder={'Search Monster'}/>
         <CardList monster={filteredMonsters}/>
+        
       </div>
     );
   }
